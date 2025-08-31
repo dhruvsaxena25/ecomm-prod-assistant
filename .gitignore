@@ -26,4 +26,8 @@ venv/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
+# Add by me
 archive/
+.vscode
+
+    
