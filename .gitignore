@@ -30,5 +30,6 @@ venv/
 archive/
 .vscode/
 .env 
-
+.data 
+data/
 

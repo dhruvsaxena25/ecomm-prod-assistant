@@ -1,12 +1,13 @@
 from bs4 import BeautifulSoup
 import undetected_chromedriver as uc
-import selenium.webdriver.common.by as By   
-import selenium.webdriver.common.keys as Keys
-import selenium.webdriver.common.action_chains as ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import csv
 import time
 import re
 import os
+
 
 
 class FlipkartScraper:
