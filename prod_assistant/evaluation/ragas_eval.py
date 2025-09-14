@@ -10,3 +10,15 @@ grpc_aio.init_grpc_aio()
 model_loader = ModelLoader()
 
 
+def evaluate_context_precision():
+    """_summary_
+    """
+    pass
+
+def evaluate_response_relevancy(query):
+    """
+
+    Args:
+        query (_type_): _description_
+    """
+    pass
