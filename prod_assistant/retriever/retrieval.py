@@ -1,21 +1,21 @@
 import os
-from langchain_astradb import AstraDBVectorStore
-from typing import List
-from langchain_core.documents import Document
-from utils.config_loader import load_config
-from utils.model_loader import ModelLoader
-from dotenv import load_dotenv
 import sys
 from pathlib import Path
 
-from langchain.retrievers.document_compressors import LLMChainFilter
-from langchain.retrievers import ContextualCompressionRetriever
-from evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
-
-# Add the project root to the Python path for direct script execution
+# Add the project root to the Python path BEFORE importing other modules
 project_root = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(project_root))
 
+# Now import the modules after the path is set
+from langchain_astradb import AstraDBVectorStore
+from typing import List
+from langchain_core.documents import Document
+from prod_assistant.utils.config_loader import load_config
+from prod_assistant.utils.model_loader import ModelLoader
+from dotenv import load_dotenv
+from langchain.retrievers.document_compressors import LLMChainFilter
+from langchain.retrievers import ContextualCompressionRetriever
+from prod_assistant.evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
 class Retriever:
     def __init__(self):
         """_summary_
