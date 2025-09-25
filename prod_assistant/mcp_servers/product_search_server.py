@@ -1,5 +1,5 @@
 from mcp.server.fastmcp import FastMCP
-from retriever.retrieval import Retrieval
+from retriever.retrieval import Retriever
 from langchain_community.tools import DuckDuckGoSearchRun
 
 # Initialize the FastMCP server
@@ -7,7 +7,7 @@ from langchain_community.tools import DuckDuckGoSearchRun
 mcp = FastMCP("hybrid_search")
 
 # Load the retriever once
-retriever_obj  = Retrieval()
+retriever_obj  = Retriever() 
 retriever  = retriever_obj.load_retriever()
 
 # Langchain DuckDuckGo Search Tool
