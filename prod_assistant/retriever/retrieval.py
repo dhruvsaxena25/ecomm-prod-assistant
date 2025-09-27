@@ -13,7 +13,6 @@ from langchain.retrievers.document_compressors import LLMChainFilter
 from langchain.retrievers import ContextualCompressionRetriever
 from evaluation.ragas_eval import evaluate_context_precision, evaluate_response_relevancy
 
-
 class Retriever:
     def __init__(self):
         """_summary_
