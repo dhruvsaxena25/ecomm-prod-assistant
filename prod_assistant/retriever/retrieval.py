@@ -27,12 +27,12 @@ class Retriever:
         """_summary_
         """
         load_dotenv()
-         
+        
         required_vars = ["GOOGLE_API_KEY", "ASTRA_DB_API_ENDPOINT", "ASTRA_DB_APPLICATION_TOKEN", "ASTRA_DB_KEYSPACE"]
         
         missing_vars = [var for var in required_vars if os.getenv(var) is None]
         
-        if missing_vars:
+        if missing_vars: 
             raise EnvironmentError(f"Missing environment variables: {missing_vars}")
 
         self.google_api_key = os.getenv("GOOGLE_API_KEY")
@@ -84,11 +84,12 @@ class Retriever:
         return output
     
 if __name__=='__main__':
-    user_query = "Can you suggest good budget iPhone under 1,00,00 INR?"
+    user_query = "Iphone"
     
     retriever_obj = Retriever()
     
     retrieved_docs = retriever_obj.call_retriever(user_query)
+    print(f"Retrieved {len(retrieved_docs)} documents.")
     
     def _format_docs(docs) -> str:
         if not docs:
@@ -104,6 +105,7 @@ if __name__=='__main__':
             )
             formatted_chunks.append(formatted)
         return "\n\n---\n\n".join(formatted_chunks)
+    
     
     retrieved_contexts = [_format_docs(doc) for doc in retrieved_docs]
     
